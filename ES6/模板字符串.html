@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板字符串的使用</title>
+</head>
+
+<body>
+    <script>
+        // ES6中引入新的声明字符串的方式: [``] 
+        //  ES5中声明字符串的方式  ''  ""
+
+        // 1.声明
+        // let str = `这是一个字符串`;
+        // console.log(str, typeof str)
+
+
+        // 2.内容中可以直接出现换行符
+        let str = `<ul>
+                    <li>沈腾</li>
+                    <li>艾伦</li>
+                    <li>玛丽</li>
+                    <li>哈哈哈哈</li>
+                   </ul>`;
+        // 3.变量拼接
+        let lovest = '哈哈哈哈';
+        let out = `${lovest}是一个傻叉`;
+        console.log(out);
+
+    </script>
+</body>
+
+</html>

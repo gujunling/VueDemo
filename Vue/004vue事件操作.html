@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue指令</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   
+</head>
+
+<body>
+    <div id="app">
+        <!-- 插值表达式，绑定vue中的data数据 -->
+        <!--  -->
+            <button type="button" @click="search()">查询显示</button>
+            
+            <p>
+                您要查询的是：{{searchMap.keyword}}
+            </p>
+            <p>
+                <a :href="result.site" target="_blank">{{result.title}}</a>
+            </p>
+       
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',    //绑定vue作用的范围
+            data: {    //定义页面中显示的模型数据
+                searchMap: {
+                    keyword: '哈哈哈哈哈哈哈，我是小胖！'
+                },
+                result:{}
+            },
+            methods: {
+                search(){
+                    console.log('search方法执行啦啦啦');
+                    this.result={
+                        "title":"哈哈哈哈",
+                        "site":"http://www.baidu.com"
+                    }
+                }
+            },
+        })
+    </script>
+    
+</body>
+
+</html>

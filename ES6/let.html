@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let变量声明的使用</title>
+</head>
+
+<body>
+    <script>
+        //声明变量
+        let a;
+        let b, c, d;
+        let e = 666;
+        let f = 120, g = "哈哈哈哈", h = [];
+
+        // 变量不能重复声明，会报错
+        // let haha = "hahhahaahahhah";
+        // let haha = "dghvkhjhavkj";   //Uncaught SyntaxError: Identifier 'haha' has already been declared
+        // console.log(haha);
+
+
+        // 块级作用域  全局、函数、eval
+        // let声明的变量只在代码块中有效，包括{}，if 、else、 while、 for等语句中的{}
+
+
+        // 不存在变量提升
+        //    不能在声明之前使用，使用var关键字则可以在声明赋值之前使用
+        
+        // console.log(test);      //Uncaught ReferenceError: Cannot access 'test' before initialization
+        let test = '测试一下哈';
+
+
+        // 不影响作用域链
+        {
+            let work = "alibaba";
+            function fu() {
+                console.log(work);
+            }
+            fu();
+        }
+
+    </script>
+</body>
+
+</html>
