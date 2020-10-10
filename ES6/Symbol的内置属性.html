@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol的内置属性</title>
+</head>
+
+<body>
+    <script>
+
+        //  Symbol.hasInstance属性
+
+        // class Person {
+        //     // param 参数的值即执行 instanceof 的对象的值，本例中为 me
+        //     static [Symbol.hasInstance](param) {
+        //         console.log(param);
+        //         console.log("执行检测类型了");
+        //         // 可以自己控制类型检测的返回值，此处为true，则检测结果即为true，此处为false检测结果即为false
+        //         return true;
+        //         // return false;
+        //     }
+        // }
+        // let me = {
+        //     name: 'hahhah',
+        //     age: 18
+        // }
+        // console.log(me instanceof Person);
+
+      // Symbol.isConcatSpreadable 属性,判断合并数组时数据是否展开。返回值类型为boolean,默认为true，即展开显示数据
+      let arr = [1,2,3];
+      let arr2 = [4,5,6];
+      arr2[Symbol.isConcatSpreadable] = false;
+      console.log(arr.concat(arr2));
+
+
+    </script>
+</body>
+
+</html>

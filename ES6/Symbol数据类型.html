@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol数据类型</title>
+</head>
+
+<body>
+    <script>
+        // 创建Symbol，此时是一个函数
+        let s = Symbol();
+        console.log(s, typeof s);  //Symbol() "symbol"
+        // 传递的参数只是一个描述字符串，即使描述字符串相同的两个变量也不相同
+        let s2 = Symbol('尚硅谷');
+        let s3 = Symbol('尚硅谷');
+        console.log(s2 === s3);  //false
+
+        // 创建symbol的方式二：通过Symbol.for创建，此时是一个函数对象
+        let s4 = Symbol.for('尚硅谷');
+        let s5 = Symbol.for('尚硅谷');   //此时可以通过描述字符串拿到唯一的symbol值
+        console.log(s4, typeof s4);
+        console.log(s4 === s5);  //true
+
+     //特性：不能与其他数据进行运算、对比，即使是自身也不能进行运算和比较
+    //  symbol表示独一无二的值，主要用于给对象添加属性和方法
+
+    </script>
+</body>
+
+</html>

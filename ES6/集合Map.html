@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map集合</title>
+</head>
+
+<body>
+    <script>
+        // 声明Map
+        let m = new Map();
+        let m2 = new Map([
+            ['name', '哈哈哈哈'],
+            ['slogon', 'dygHKJHY']
+
+        ]);
+
+        // 常见的api
+
+
+        // 添加一个元素
+        m.set('name', '尚硅谷哈哈哈');
+        m.set('study', function () {
+            console.log("我正在学习")
+        });
+        let key = {
+            school: 'atguigu'
+        };
+        m.set(key, ['北京', '上海', '深圳']);
+        console.log(m, typeof m);
+        console.log(m2, typeof m2);
+
+        // 查看元素的个数
+        console.log(m.size);
+
+        // 通过键名获取元素键值
+        console.log(m.get('name'));
+        console.log(m.get('study'));
+        console.log(m.get(key));
+
+        // 检查集合中是否存在某个元素，返回值为boolean
+        console.log(m2.has('name'));
+        console.log(m2.has('slogon'));
+        console.log(m2.has('asdfdf'));
+
+
+        // 删除集合中的某个元素
+        m2.delete('slogon');
+        console.log(m2);
+
+
+        // 清空集合Map中的元素
+        // m.clear();
+        console.log(m);
+
+        // 遍历
+        for (let v of m) {
+            console.log(v);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

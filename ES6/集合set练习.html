@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合set练习</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 6, 4, 2, 3, 5, 1, 6];
+        // 数组去重
+        // 将数组转化为集合(集合中元素是唯一的)再通过扩展运算符 ... 转化为数组
+        let result = [...new Set(arr)];
+        console.log(result);
+
+        // 求交集
+        let arr2 = [4, 6, 1, 1, 6, 2, 7, 9, 10];
+        // 先把数组arr去重在取交集
+        // let result2 = [... new Set(arr)].filter(item => {
+        //     // 先把s2转化为集合去重
+        //     let s2 = new Set(arr2);
+        //     // 再判断集合中是否存在元素item（即数组arr去重后的数组中的元素）
+        //     if (s2.has(item)) {
+        //         return true;
+
+        //     }else{
+        //         return false;
+        //     }
+        // });
+
+        // 上述代码可以使用箭头函数进行简化
+        let result2 = [... new Set(arr)].filter(item => new Set(arr2).has(item));
+        console.log(result2);
+
+        // 求并集
+        // 先把两个数组进行合并，在转化为集合进行去重，最后在转化为数组
+        let union = [new Set([...arr, ...arr2])];
+        console.log(union);
+
+        // 求差集(A对B求差集，即选择A 数组中存在而B数组中不存在的元素)，实际上是对并集进行取反运算
+        let diff = [... new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+        console.log(diff);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类继承</title>
+</head>
+
+<body>
+    <script>
+        // ES 5 通过构造函数来实现继承
+
+        // //  手机
+        // function Phone(brand, price) {
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+
+        // Phone.prototype.call = function () {
+        //     console.log('我可以打电话的哦！');
+        // }
+
+        // //  智能手机
+        // function SmartPhone(brand, price, color, size) {
+        //     Phone.call(this, brand, price);
+        //     this.color = color;
+        //     this.size = size;
+        // }
+
+        // // 设置子级构造函数的原型
+        // SmartPhone.prototype = new Phone;
+
+        // // 声明子类的方法
+        // SmartPhone.prototype.photo = function () {
+        //     console.log("我可以拍照");
+        // }
+        // SmartPhone.prototype.palyGame = function () {
+        //     console.log("我可以玩游戏");
+        // }
+
+        // const samsung = new SmartPhone('三星', 1999, '黑色', '5.5英寸');
+        // console.log(samsung);
+
+
+        // ES 6 中class类的继承
+
+        class Phone {
+            // 构造方法
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+            // 父类的成员方法
+            call() {
+                console.log('我可以打电话哎哎哎哎');
+            }
+        }
+
+        class SmartPhone extends Phone {
+            // 构造方法
+            constructor(brand, price, color, size) {
+                super(brand, price);
+                this.color = color;
+                this.size = size;
+
+            }
+
+            // 添加子类中独有的方法
+            photo() {
+                console.log('我可以拍照哈哈哈哈');
+            }
+            listen() {
+                console.log('我可以听音乐哦哦哦哦哦哦');
+            }
+            // 子类对父类方法的重写
+            call() {
+                console.log('我可以视频通话');
+            }
+        }
+
+        let samsung = new SmartPhone('三星', 1999, '黑色', '5.5英寸');
+        console.log(samsung);
+        samsung.photo();
+        samsung.listen();
+        samsung.call();
+
+
+    </script>
+</body>
+
+</html>

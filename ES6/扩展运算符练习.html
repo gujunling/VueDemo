@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符练习</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        // 1.数组的合并
+        // const kuaizi = ['肖央', '王太利'];
+        // const fenghuang = ['玲花', '曾毅'];
+        // // ES5中用法
+        // // const zuixuanxiaopingguo = kuaizi.concat(fenghuang);
+        // const zuixuanxiaopingguo = [...kuaizi, ...fenghuang];
+        // console.log(zuixuanxiaopingguo);
+
+        //2. 数组的克隆,如果存在引用类型的数据时为浅拷贝，如果不存在引用类型的数据则可以完全克隆
+        const sanzhihua = ['E', 'G', 'M'];
+        const sanyecao = [...sanzhihua];
+        console.log(sanzhihua)
+        console.log(sanyecao)
+        console.log(sanzhihua === sanyecao);   //false
+
+
+        // 3.将伪数组转化为真正的数组
+        const divs = document.querySelectorAll('div');
+        console.log(divs)  //此时数据类型为object，是一个对象
+        const divArr = [...divs];
+        console.log(divArr);
+
+
+
+    </script>
+</body>
+
+</html>

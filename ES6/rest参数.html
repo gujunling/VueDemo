@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest参数 </title>
+</head>
+
+<body>
+    <script>
+        // ES6中引入rest参数，用于获取函数的实参，用来代替arguments
+
+        //  ES 5 中获取实参的方式
+        // function fn(){
+        //     console.log(arguments);
+        // }
+        // fn('哈哈哈','嘿嘿嘿','测试测试');  //此时数据类型为对象object
+
+        // ES6中的rest参数,rest参数必须要放到最后
+        function fn(...args) {
+            console.log(args);
+        }
+        fn('哈哈哈', '嘿嘿嘿', '测试测试');  //此时的数据为数组
+
+
+
+
+    </script>
+</body>
+
+</html>

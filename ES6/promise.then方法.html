@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.then方法</title>
+</head>
+
+<body>
+    <script>
+        //创建promise对象
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // 成功的情况下
+                resolve('模拟从数据库中查询到的数据');
+
+                // 失败的情况
+                // reject('出错啦，兄弟！！！');
+
+            }, 1000);
+        });
+        // 调用then方法 ,then方法的返回结果是Promise对象，对象的状态由回调函数的执行结果决定
+        // 1. 如果回调函数中返回的结果为非promise类型的属性，则状态为成功，返回值为对象的成功值
+        // 2. 是promise对象
+        // 3. 抛出错误
+        const result = p.then(function (value) {
+            console.log(value);
+            // 非 promise 类型的属性
+            // return 123;
+            //2. 是promise对象
+            // return new Promise((resolve,reject) => {
+            //     // resolve('success');
+            //     reject('error');
+            // });
+            // 3.抛出错误
+            // throw new Error('出错啦');
+        }, reason => {
+            console.warn(reason);
+        });
+        console.log(result);
+
+
+      // then方法是可以链式调用的,可以杜绝出现回调地狱现象
+    //   p.then(value =>{
+
+    //   }).then(value => {
+
+    //   });
+
+    </script>
+</body>
+
+</html>

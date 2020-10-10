@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器</title>
+</head>
+
+<body>
+    <script>
+        //生成器其实是一个特殊的函数
+        //声明一个生成器函数
+        function* gen() {
+            console.log("生成器函数执行11111！");
+            yield '小白兔';
+            console.log("生成器函数执行222222！");
+            yield '白又白';
+            console.log("生成器函数执行33333！");
+            yield '两只耳朵竖起来';
+            console.log("生成器函数执行44444！");
+        }
+        let iterator = gen();
+        // 直接调用不会执行，需要调用其next（）方法才能执行
+        // iterator.next();
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class的get和set</title>
+</head>
+
+<body>
+    <script>
+        // get和set
+        class Phone {
+            // get通常对对象的动态属性进行封装，此属性是经常变化的
+            get price() {
+                console.log('价格属性被读取了');
+                return 'readreadread';
+            }
+            // set则可以添加更多的控制,比如判断等
+            set price(newVal) {
+                console.log('价格属性被修改了');
+                return 'updateupdate';
+            }
+        }
+
+        // 实例化对象
+        let s = new Phone();
+        // 此时打印的数据就是上面class类中的get方法的返回值，不设置则默认为undefined
+        console.log(s.price);
+
+        s.price = 'free';
+        // console.log(s.price);
+
+    </script>
+</body>
+
+</html>

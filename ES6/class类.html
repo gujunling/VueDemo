@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class类的声明和使用</title>
+</head>
+
+<body>
+    <script>
+        // 使用ES 5 的方式实例化一个对象
+
+        // 以手机类为例
+        // 初始化对象的属性值 
+        // function Phone(brand, price) {
+        //     this.brand = brand;
+        //     this.price = price;
+        // };
+
+        // // 添加方法，通过原型对象进行添加，达到重用的效果
+        // Phone.prototype.call = function () {
+        //     console.log("我可以打电话");
+        // }
+
+        // // 实例化对象
+        // let Huawei = new Phone('nava2s', 1999);
+        // let Huawei2 = new Phone('nava7', 2999);
+        // let xiaomi = new Phone('xiaomise', 1999);
+        // let iPhone = new Phone('iPhone 11', 3999);
+
+        // console.log(Huawei);
+        // Huawei.call();
+        // console.log(Huawei2);
+        // console.log(xiaomi);
+        // console.log(iPhone);
+
+        // ES6中使用class实例化对象
+        class Phone {
+            // 构造方法,会在创建对象（new Phone）时自动执行
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+
+            }
+            // 创建方法
+            // 必须使用此形式，不能使用ES 5 中的对象完整形式（call: function(){}）
+            call() {
+                console.log('我可以打电话 啊啊啊 ');
+            }
+            listen() {
+                console.log('我还可以听音乐啊啊 啊啊 ');
+            }
+        }
+
+
+        let Huawei = new Phone('nava2s', 1999);
+
+        Huawei.call();
+        Huawei.listen();
+
+        console.log(Huawei);
+
+
+    </script>
+</body>
+
+</html>

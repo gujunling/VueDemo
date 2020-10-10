@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6模块化使用</title>
+</head>
+
+<body>
+    <script type="module">
+
+        // // 通用的引入方式
+
+        // // 引入index.js 模块中的内容
+        // import * as index from '../js/index.js';
+        // console.log(index);
+
+        // // 引入test.js 模块中的内容
+        // import * as test from '../js/test.js';
+        // console.log(test);
+
+
+        // // 引入test2.js 模块中的内容
+        // import * as test2 from '../js/test2.js';
+        // console.log(test2);
+
+        // test2.default.change();
+
+        // // 解构赋值的形式
+        // import { school, teach } from '../js/index.js'
+        // console.log(school);
+        // console.log(teach);
+
+        // // 遇到重名冲突时可以使用别名
+        // import { school as atguigu, findJob } from '../js/test.js';
+
+        // console.log(atguigu, findJob);
+
+        // // // 在引入默认暴露模块时必须起别名引入
+        // // import { default as test2 } from '../js/test2.js';
+        // // console.log(test2.school);
+
+        // // 简便形式，只能针对默认暴露
+        // import  test2 from '../js/test2.js';
+        // console.log(test2.school);
+    </script>
+
+    <!-- 兼容性可能会出错 -->
+    <script src="../js/app.js" type="module">
+
+    </script>
+</body>
+
+</html>
